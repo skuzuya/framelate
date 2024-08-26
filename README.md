@@ -123,3 +123,8 @@ frame（骨組み）とtemplate（雛型）を合わせました。
   <br>
   API: Google API
   <br>
+
+  ## ■ 画面遷移図
+
+  [画面遷移図](https://www.figma.com/board/OmViuXLTWm8LlEEgQUkdtG/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E3%80%80Framelate%EF%BC%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AC%E3%83%BC%E3%83%88%EF%BC%89-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=16-3558&t=xCM6kI90kkuew70Z-0)
+  <br>
