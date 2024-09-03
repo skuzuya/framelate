@@ -128,3 +128,8 @@ frame（骨組み）とtemplate（雛型）を合わせました。
 
   [画面遷移図](https://www.figma.com/design/skjcHjwK3j5gHfjkaAVfwx/Framelate?node-id=0-1&t=euX0Ztv5wtMp0VPz-1)
   <br>
+
+  ## ■ ER図
+
+  [ER図](https://app.diagrams.net/#G1KKpE5UVcLyyQYmibQIxqEXXxEJ0euQlu#%7B%22pageId%22%3A%22LhA8XJp_rAJgdDnwhpqP%22%7D)
+  <br>
