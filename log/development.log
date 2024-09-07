@@ -1,0 +1,288 @@
+  [1m[35m (584.9ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (164.4ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+Started GET "/" for 192.168.65.1 at 2024-09-06 15:14:35 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (20.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 7.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+  [1m[35m (368.1ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (159.0ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+Started GET "/" for 192.168.65.1 at 2024-09-06 20:10:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/favicon.ico" for 192.168.65.1 at 2024-09-06 20:10:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/" for 192.168.65.1 at 2024-09-06 20:10:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (45.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/favicon.ico" for 192.168.65.1 at 2024-09-06 20:10:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/top" for 192.168.65.1 at 2024-09-06 20:10:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/top"):
+  
+Started GET "/" for 192.168.65.1 at 2024-09-06 20:10:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/" for 192.168.65.1 at 2024-09-06 20:11:05 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2024-09-06 20:11:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant HomeController)
+NameError (uninitialized constant HomeController)
+  
+Started GET "/top" for 192.168.65.1 at 2024-09-06 20:11:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/top"):
+  
+Started GET "/rails/info/routes?query=/" for 192.168.65.1 at 2024-09-06 20:11:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"/"}
+Completed 200 OK in 33ms (Views: 4.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/top/index" for 192.168.65.1 at 2024-09-06 20:11:41 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 2.9ms | GC: 1.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 375.3ms | GC: 15.3ms)
+Completed 200 OK in 443ms (Views: 377.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 18.2ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-06 20:11:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/top/index" for 192.168.65.1 at 2024-09-06 20:11:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | GC: 2.5ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.5ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-06 20:11:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/top/index" for 192.168.65.1 at 2024-09-06 20:11:56 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 1.9ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-06 20:11:56 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.2ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2024-09-07 06:43:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 55.5ms | GC: 7.8ms)
+Completed 200 OK in 76ms (Views: 62.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.8ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-07 06:43:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2024-09-07 06:43:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | GC: 2.7ms)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.7ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-07 06:43:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/top/index" for 192.168.65.1 at 2024-09-07 06:43:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | GC: 2.2ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-07 06:43:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/top/" for 192.168.65.1 at 2024-09-07 06:43:16 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/top"):
+  
+Started GET "/" for 192.168.65.1 at 2024-09-07 06:43:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.5ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-07 06:43:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 192.168.65.1 at 2024-09-07 07:14:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | GC: 2.1ms)
+Completed 200 OK in 33ms (Views: 28.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-07 07:14:01 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2024-09-07 07:14:01 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 1.5ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-07 07:14:01 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2024-09-07 07:17:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 14.0ms | GC: 9.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 9.9ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+
+Causes:
+NoMethodError (undefined method `each' for nil:NilClass)
+    1: <div class="container mx-auto p-4">
+    2:   <h1 class="text-3xl font-bold mb-4">Framelate</h1>
+    3:   <ul class="list-disc pl-5">
+    4:     <% @boards.each do |board| %>
+    5:       <li class="mb-2">
+    6:         <a href="#" class="text-blue-500 hover:underline"><%= board.title %></a>
+    7:       </li>
+  
+app/views/top/index.html.erb:4
+Started GET "/" for 192.168.65.1 at 2024-09-07 07:17:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  Rendered top/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 101.7ms | GC: 19.8ms)
+Completed 200 OK in 123ms (Views: 112.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 23.7ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-07 07:17:53 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
