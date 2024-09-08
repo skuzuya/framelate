@@ -1,7 +1,24 @@
-<div class="container mx-auto p-4">
-  <h1 class="text-3xl font-bold mb-4">Framelate</h1>
-  <ul class="list-disc pl-5">
-    <li><a href="/top/about">About</a></li>
-    <li><a href="/top/contact">Contact</a></li>
-  </ul>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Framelate</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'shared/header' %>
+      <div class="bg-white text-black p-4">
+        ここに投稿されたテンプレート一覧が表示される予定です。
+      </div>
+      <div class="hidden">
+      このテキストは非表示になるはずです。
+    </div>
+    <%= render 'shared/footer' %>
+  </body>
+</html>
+
+
