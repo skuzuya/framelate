@@ -5,7 +5,11 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def not_authenticated
-    redirect_to login_path
-  end
+  # def not_authenticated
+  #   redirect_to login_path
+  # end
+
+  # def current_user
+  #   @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  # end
 end

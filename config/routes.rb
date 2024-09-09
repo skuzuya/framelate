@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   # ログインとログアウトのカスタムルート
   get 'login', to: 'user_sessions#new', as: :login
   post 'login', to: 'user_sessions#create'
-  delete 'logout', to: 'user_sessions#destroy', as: :logout
+  delete 'logout', to: 'user_sessions#destroy'
+  get 'signup', to: 'users#new', as: 'signup'
   # ルートパスの設定（例: ホームページ）
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
