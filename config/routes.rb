@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
   get "top/index"
   root "top#index"
+
+  # ユーザーのリソースルート
+  resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
+  # セッションのリソースルート
+  resources :user_sessions, only: [:new, :create, :destroy]
+
+  # ログインとログアウトのカスタムルート
+  get 'login', to: 'user_sessions#new', as: :login
+  post 'login', to: 'user_sessions#create'
+  delete 'logout', to: 'user_sessions#destroy', as: :logout
+  # ルートパスの設定（例: ホームページ）
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
