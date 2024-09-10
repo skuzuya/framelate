@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "signup", to: "users#new", as: "signup"
   get "login", to: "user_sessions#new", as: "login"
   post "login", to: "user_sessions#create"
-  get "logout", to: "user_sessions#destroy", as: "logout"
+  delete "logout", to: "user_sessions#destroy", as: "logout"
 
   resources :users, only: %i[new create]
   resources :templates, only: %i[index new create show edit update destroy]
