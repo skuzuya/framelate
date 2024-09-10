@@ -1,22 +1,14 @@
-<header class="w-full mx-auto flex justify-between items-center bg-gray-500 p-4" data-controller="menu">
-  <h1 class="text-4xl font-semibold">Framelate</h1>
-  <div class="flex justify-between items-center">
-    <div>
-      <button id="menu-button" data-action="click->menu#toggle">
-        <svg id="menu-icon" class="h-6 w-6 fill-current" viewBox="0 0 24 24" data-menu-target="icon">
-          <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/>
-        </svg>
-      </button>
+<header>
+  <nav class="w-full mx-auto flex justify-between items-center bg-gray-500 p-4" data-controller="menu">
+    <h1 class="text-4xl font-semibold">Framelate</h1>
+    <div class="flex items-center">
+      <% if current_user %>
+        <%= link_to 'Logout', logout_path, method: :delete, data: { turbo_method: :delete } %>
+      <% else %>
+        <%= link_to 'Login', login_path, data: { turbo: false } %>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= link_to 'Signup', signup_path, data: { turbo: false } %>
+      <% end %>
     </div>
-  </div>
-  <div id="menu" class="hidden" data-menu-target="menu">
-    <ul>
-      <li><a href="#">マイページ</a></li>
-      <li><a href="#">いいね一覧</a></li>
-      <li><a href="#">学習時間記録</a></li>
-      <li><a href="#">新規作成</a></li>
-      <li><a href="#">ランキング</a></li>
-      <li><a href="#">ログアウト</a></li>
-    </ul>
-  </div>
+  </nav>
 </header>
