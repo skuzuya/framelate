@@ -1,8 +1,12 @@
 require "test_helper"
 
 class TopControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @template = templates(:one)
+  end
+
   test "should get index" do
-    get top_index_url
+    get root_url
     assert_response :success
   end
 end

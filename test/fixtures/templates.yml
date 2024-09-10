@@ -9,3 +9,19 @@ one: {}
 #
 two: {}
 # column: value
+
+one:
+  title: "MyString"
+  description: "MyText"
+  body: "MyBody"
+  user: one
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+
+two:
+  title: "AnotherString"
+  description: "AnotherText"
+  body: "AnotherBody"
+  user: two
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
