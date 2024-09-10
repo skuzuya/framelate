@@ -1,8 +1,12 @@
 <header>
   <nav class="w-full mx-auto flex justify-between items-center bg-gray-500 p-4" data-controller="menu">
-    <h1 class="text-4xl font-semibold">Framelate</h1>
+    <%= link_to root_path, class: "text-4xl font-semibold" do %>
+      Framelate
+    <% end %>
     <div class="flex items-center">
       <% if current_user %>
+        <%= link_to 'Create', new_template_path, data: { turbo: false } %>
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <%= link_to 'Logout', logout_path, method: :delete, data: { turbo_method: :delete } %>
       <% else %>
         <%= link_to 'Login', login_path, data: { turbo: false } %>
