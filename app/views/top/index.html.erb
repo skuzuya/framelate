@@ -10,15 +10,15 @@
   </head>
 
   <body>
-    <%= render 'shared/header' %>
-      <div class="bg-white text-black p-4">
-        ここに投稿されたテンプレート一覧が表示される予定です。
-      </div>
-      <div class="hidden">
-      このテキストは非表示になるはずです。
+    <div class="bg-white text-black p-4">
+      ここに投稿されたテンプレート一覧が表示される予定です。
     </div>
-    <%= render 'shared/footer' %>
+    <div class="bg-white text-black p-4">
+      <% if current_user %>
+        <p>ログイン中のユーザー: <%= current_user.email %></p>
+      <% else %>
+        <p>ログインしていません。</p>
+      <% end %>
+    </div>
   </body>
 </html>
-
-
