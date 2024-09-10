@@ -2,7 +2,7 @@ class TopController < ApplicationController
   skip_before_action :require_login
 
   def index
-    # ルートパスのアクション
+    @templates = Template.includes(:user)
   end
 
   # private
