@@ -19,6 +19,11 @@
       <% else %>
         <p>ログインしていません。</p>
       <% end %>
+      <% if @templates.present? %>
+        <%= render partial: 'template', collection: @templates %>
+      <% else %>
+        <div class="mb-3">テンプレートがありません。</div>
+      <% end %>
     </div>
   </body>
 </html>
