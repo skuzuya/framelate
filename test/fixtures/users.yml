@@ -9,3 +9,15 @@ one: {}
 #
 two: {}
 # column: value
+
+one:
+  email: sss@example.com
+  crypted_password: $2a$10$NGp2cMsE79JOg9NcUQWbbuzcuabsxq.TeIFOxZVCmY6YfT6Dt6SmW
+  salt: $2a$12$eDDK.iOsUPHCh4ShkIzRJu
+  name: sk
+
+two:
+  email: kkk@example.com
+  crypted_password: $2a$10$NGp2cMsE79JOg9NcUQWbbuzcuabsxq.TeIFOxZVCmY6YfT6Dt6SmW
+  salt: $2a$12$eDDK.iOsUPHCh4ShkIzRJu
+  name: kk
