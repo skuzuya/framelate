@@ -19,6 +19,25 @@ class TemplatesController < ApplicationController
     @template = Template.find(params[:id])
   end
 
+  def edit
+    @template = Template.find(params[:id])
+  end
+
+  def update
+    @template = Template.find(params[:id])
+    if @template.update(template_params)
+      redirect_to template_path(@template)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @template = Template.find(params[:id])
+    @template.destroy
+    redirect_to root_path
+  end
+
   private
 
   def template_params
