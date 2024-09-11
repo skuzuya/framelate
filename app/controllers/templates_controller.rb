@@ -1,4 +1,5 @@
 class TemplatesController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   def index
   end
 
@@ -35,7 +36,7 @@ class TemplatesController < ApplicationController
   def destroy
     @template = Template.find(params[:id])
     @template.destroy
-    redirect_to root_path
+    redirect_to root_path, status: :see_other
   end
 
   private

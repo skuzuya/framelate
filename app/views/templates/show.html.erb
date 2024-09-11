@@ -10,11 +10,14 @@
                 <li class="list-inline-item"><%= "by #{@template.user.name}" %></li>
                 <li class="list-inline-item"><%= l @template.created_at, format: :long %></li>
               </ul>
-              <p class="mt-4 mb-4 text-gray-700"><%= @template.description %></p> <!-- テンプレート説明を追加し、マージンを設定 -->
+              <p class="mt-4 mb-4 text-gray-700"><%= @template.description %></p>
             </div>
-            <div>
-              <%= link_to '編集', edit_template_path(@template), class: "border border-black bg-white text-black rounded px-4 py-2 hover:bg-gray-100 hover:cursor-pointer" %>
-            </div>
+            <% if current_user == @template.user %>
+              <div class="flex space-x-2">
+                <%= link_to '編集', edit_template_path(@template), class: "border border-black bg-white text-black rounded px-4 py-2 hover:bg-gray-100 hover:cursor-pointer" %>
+                <%= button_to '削除', template_path(@template), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "border border-red-500 bg-white text-red-500 rounded px-4 py-2 hover:bg-red-100 hover:cursor-pointer" %></pre>
+              </div>
+            <% end %>
           </div>
           <div class="flex justify-center mt-4">
             <pre class="border border-black p-4 whitespace-pre-wrap w-full max-w-2xl"><%= @template.body %></pre>
