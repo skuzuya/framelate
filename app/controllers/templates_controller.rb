@@ -15,6 +15,10 @@ class TemplatesController < ApplicationController
     end
   end
 
+  def show
+    @template = Template.find(params[:id])
+  end
+
   private
 
   def template_params

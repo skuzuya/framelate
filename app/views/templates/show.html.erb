@@ -1,0 +1,20 @@
+<div class="container pt-5">
+  <div class="row mb-3">
+    <div class="col-lg-8 offset-lg-2">
+      <article class="card">
+        <div class="card-body">
+          <div class="flex">
+            <div class="w-3/4">
+              <h3 style="display: inline;"><%= @template.title %></h3>
+              <ul class="list-inline">
+                <li class="list-inline-item"><%= "by #{@template.user.name}" %></li>
+                <li class="list-inline-item"><%= l @template.created_at, format: :long %></li>
+              </ul>
+            </div>
+          </div>
+          <pre><%= @template.body %></pre>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
