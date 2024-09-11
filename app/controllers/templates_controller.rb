@@ -1,4 +1,5 @@
 class TemplatesController < ApplicationController
+  skip_before_action :require_login, only: [ :index, :show ]
   def index
   end
 
@@ -13,6 +14,29 @@ class TemplatesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @template = Template.find(params[:id])
+  end
+
+  def edit
+    @template = Template.find(params[:id])
+  end
+
+  def update
+    @template = Template.find(params[:id])
+    if @template.update(template_params)
+      redirect_to template_path(@template)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @template = Template.find(params[:id])
+    @template.destroy
+    redirect_to root_path, status: :see_other
   end
 
   private

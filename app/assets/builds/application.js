@@ -1,5 +1,11 @@
 var __defProp = Object.defineProperty;
 var __getOwnPropNames = Object.getOwnPropertyNames;
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
+  get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
+}) : x)(function(x) {
+  if (typeof require !== "undefined") return require.apply(this, arguments);
+  throw Error('Dynamic require of "' + x + '" is not supported');
+});
 var __esm = (fn, res) => function __init() {
   return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
 };
@@ -6101,8 +6107,8 @@ function typecast(value) {
   }
 }
 var Binding = class {
-  constructor(context, action) {
-    this.context = context;
+  constructor(context2, action) {
+    this.context = context2;
     this.action = action;
   }
   get index() {
@@ -6754,8 +6760,8 @@ var ValueListObserver = class {
   }
 };
 var BindingObserver = class {
-  constructor(context, delegate) {
-    this.context = context;
+  constructor(context2, delegate) {
+    this.context = context2;
     this.delegate = delegate;
     this.bindingsByAction = /* @__PURE__ */ new Map();
   }
@@ -6817,8 +6823,8 @@ var BindingObserver = class {
   }
 };
 var ValueObserver = class {
-  constructor(context, receiver) {
-    this.context = context;
+  constructor(context2, receiver) {
+    this.context = context2;
     this.receiver = receiver;
     this.stringMapObserver = new StringMapObserver(this.element, this);
     this.valueDescriptorMap = this.controller.valueDescriptorMap;
@@ -6910,8 +6916,8 @@ var ValueObserver = class {
   }
 };
 var TargetObserver = class {
-  constructor(context, delegate) {
-    this.context = context;
+  constructor(context2, delegate) {
+    this.context = context2;
     this.delegate = delegate;
     this.targetsByName = new Multimap();
   }
@@ -6998,9 +7004,9 @@ function getOwnStaticObjectPairs(constructor, propertyName) {
   return definition ? Object.keys(definition).map((key) => [key, definition[key]]) : [];
 }
 var OutletObserver = class {
-  constructor(context, delegate) {
+  constructor(context2, delegate) {
     this.started = false;
-    this.context = context;
+    this.context = context2;
     this.delegate = delegate;
     this.outletsByName = new Multimap();
     this.outletElementsByName = new Multimap();
@@ -7014,7 +7020,7 @@ var OutletObserver = class {
         this.setupAttributeObserverForOutlet(outletName);
       });
       this.started = true;
-      this.dependentContexts.forEach((context) => context.refresh());
+      this.dependentContexts.forEach((context2) => context2.refresh());
     }
   }
   refresh() {
@@ -7150,7 +7156,7 @@ var OutletObserver = class {
   }
   get dependentContexts() {
     const identifiers = this.dependentControllerIdentifiers;
-    return this.router.contexts.filter((context) => identifiers.includes(context.identifier));
+    return this.router.contexts.filter((context2) => identifiers.includes(context2.identifier));
   }
   hasOutlet(element, outletName) {
     return !!this.getOutlet(element, outletName) || !!this.getOutletFromMap(element, outletName);
@@ -7366,24 +7372,24 @@ var Module = class {
     return Array.from(this.connectedContexts);
   }
   connectContextForScope(scope) {
-    const context = this.fetchContextForScope(scope);
-    this.connectedContexts.add(context);
-    context.connect();
+    const context2 = this.fetchContextForScope(scope);
+    this.connectedContexts.add(context2);
+    context2.connect();
   }
   disconnectContextForScope(scope) {
-    const context = this.contextsByScope.get(scope);
-    if (context) {
-      this.connectedContexts.delete(context);
-      context.disconnect();
+    const context2 = this.contextsByScope.get(scope);
+    if (context2) {
+      this.connectedContexts.delete(context2);
+      context2.disconnect();
     }
   }
   fetchContextForScope(scope) {
-    let context = this.contextsByScope.get(scope);
-    if (!context) {
-      context = new Context(this, scope);
-      this.contextsByScope.set(scope, context);
+    let context2 = this.contextsByScope.get(scope);
+    if (!context2) {
+      context2 = new Context(this, scope);
+      this.contextsByScope.set(scope, context2);
     }
-    return context;
+    return context2;
   }
 };
 var ClassMap = class {
@@ -7719,7 +7725,7 @@ var Router = class {
   getContextForElementAndIdentifier(element, identifier) {
     const module = this.modulesByIdentifier.get(identifier);
     if (module) {
-      return module.contexts.find((context) => context.element == element);
+      return module.contexts.find((context2) => context2.element == element);
     }
   }
   proposeToConnectScopeForElementAndIdentifier(element, identifier) {
@@ -7824,11 +7830,11 @@ var Application = class {
     identifiers.forEach((identifier) => this.router.unloadIdentifier(identifier));
   }
   get controllers() {
-    return this.router.contexts.map((context) => context.controller);
+    return this.router.contexts.map((context2) => context2.controller);
   }
   getControllerForElementAndIdentifier(element, identifier) {
-    const context = this.router.getContextForElementAndIdentifier(element, identifier);
-    return context ? context.controller : null;
+    const context2 = this.router.getContextForElementAndIdentifier(element, identifier);
+    return context2 ? context2.controller : null;
   }
   handleError(error2, message, detail) {
     var _a;
@@ -8182,8 +8188,8 @@ function writeString(value) {
   return `${value}`;
 }
 var Controller = class {
-  constructor(context) {
-    this.context = context;
+  constructor(context2) {
+    this.context = context2;
   }
   static get shouldLoad() {
     return true;
@@ -8238,507 +8244,33 @@ Controller.targets = [];
 Controller.outlets = [];
 Controller.values = {};
 
-// app/javascript/controllers/application.js
-var application = Application.start();
-application.debug = false;
-window.Stimulus = application;
-
-// app/javascript/controllers/hello_controller.js
-var hello_controller_default = class extends Controller {
-  connect() {
-    this.element.textContent = "Hello World!";
-  }
-};
-
-// node_modules/stimulus/dist/stimulus.js
-function camelize2(value) {
-  return value.replace(/(?:[_-])([a-z0-9])/g, (_, char) => char.toUpperCase());
+// node_modules/stimulus/dist/webpack-helpers.js
+function definitionsFromContext(context2) {
+  return context2.keys().map((key) => definitionForModuleWithContextAndKey(context2, key)).filter((value) => value);
 }
-function namespaceCamelize2(value) {
-  return camelize2(value.replace(/--/g, "-").replace(/__/g, "_"));
-}
-function capitalize2(value) {
-  return value.charAt(0).toUpperCase() + value.slice(1);
-}
-function dasherize2(value) {
-  return value.replace(/([A-Z])/g, (_, char) => `-${char.toLowerCase()}`);
-}
-function isSomething2(object) {
-  return object !== null && object !== void 0;
-}
-function hasProperty2(object, property) {
-  return Object.prototype.hasOwnProperty.call(object, property);
-}
-function readInheritableStaticArrayValues2(constructor, propertyName) {
-  const ancestors = getAncestorsForConstructor2(constructor);
-  return Array.from(ancestors.reduce((values, constructor2) => {
-    getOwnStaticArrayValues2(constructor2, propertyName).forEach((name) => values.add(name));
-    return values;
-  }, /* @__PURE__ */ new Set()));
-}
-function readInheritableStaticObjectPairs2(constructor, propertyName) {
-  const ancestors = getAncestorsForConstructor2(constructor);
-  return ancestors.reduce((pairs, constructor2) => {
-    pairs.push(...getOwnStaticObjectPairs2(constructor2, propertyName));
-    return pairs;
-  }, []);
-}
-function getAncestorsForConstructor2(constructor) {
-  const ancestors = [];
-  while (constructor) {
-    ancestors.push(constructor);
-    constructor = Object.getPrototypeOf(constructor);
-  }
-  return ancestors.reverse();
-}
-function getOwnStaticArrayValues2(constructor, propertyName) {
-  const definition = constructor[propertyName];
-  return Array.isArray(definition) ? definition : [];
-}
-function getOwnStaticObjectPairs2(constructor, propertyName) {
-  const definition = constructor[propertyName];
-  return definition ? Object.keys(definition).map((key) => [key, definition[key]]) : [];
-}
-var getOwnKeys2 = (() => {
-  if (typeof Object.getOwnPropertySymbols == "function") {
-    return (object) => [...Object.getOwnPropertyNames(object), ...Object.getOwnPropertySymbols(object)];
-  } else {
-    return Object.getOwnPropertyNames;
-  }
-})();
-var extend3 = (() => {
-  function extendWithReflect(constructor) {
-    function extended() {
-      return Reflect.construct(constructor, arguments, new.target);
-    }
-    extended.prototype = Object.create(constructor.prototype, {
-      constructor: { value: extended }
-    });
-    Reflect.setPrototypeOf(extended, constructor);
-    return extended;
-  }
-  function testReflectExtension() {
-    const a = function() {
-      this.a.call(this);
-    };
-    const b = extendWithReflect(a);
-    b.prototype.a = function() {
-    };
-    return new b();
-  }
-  try {
-    testReflectExtension();
-    return extendWithReflect;
-  } catch (error2) {
-    return (constructor) => class extended extends constructor {
-    };
-  }
-})();
-var defaultSchema2 = {
-  controllerAttribute: "data-controller",
-  actionAttribute: "data-action",
-  targetAttribute: "data-target",
-  targetAttributeForScope: (identifier) => `data-${identifier}-target`,
-  outletAttributeForScope: (identifier, outlet) => `data-${identifier}-${outlet}-outlet`,
-  keyMappings: Object.assign(Object.assign({ enter: "Enter", tab: "Tab", esc: "Escape", space: " ", up: "ArrowUp", down: "ArrowDown", left: "ArrowLeft", right: "ArrowRight", home: "Home", end: "End", page_up: "PageUp", page_down: "PageDown" }, objectFromEntries2("abcdefghijklmnopqrstuvwxyz".split("").map((c) => [c, c]))), objectFromEntries2("0123456789".split("").map((n) => [n, n])))
-};
-function objectFromEntries2(array) {
-  return array.reduce((memo, [k, v]) => Object.assign(Object.assign({}, memo), { [k]: v }), {});
-}
-function ClassPropertiesBlessing2(constructor) {
-  const classes = readInheritableStaticArrayValues2(constructor, "classes");
-  return classes.reduce((properties, classDefinition) => {
-    return Object.assign(properties, propertiesForClassDefinition2(classDefinition));
-  }, {});
-}
-function propertiesForClassDefinition2(key) {
-  return {
-    [`${key}Class`]: {
-      get() {
-        const { classes } = this;
-        if (classes.has(key)) {
-          return classes.get(key);
-        } else {
-          const attribute = classes.getAttributeName(key);
-          throw new Error(`Missing attribute "${attribute}"`);
-        }
-      }
-    },
-    [`${key}Classes`]: {
-      get() {
-        return this.classes.getAll(key);
-      }
-    },
-    [`has${capitalize2(key)}Class`]: {
-      get() {
-        return this.classes.has(key);
-      }
-    }
-  };
-}
-function OutletPropertiesBlessing2(constructor) {
-  const outlets = readInheritableStaticArrayValues2(constructor, "outlets");
-  return outlets.reduce((properties, outletDefinition) => {
-    return Object.assign(properties, propertiesForOutletDefinition2(outletDefinition));
-  }, {});
-}
-function getOutletController2(controller, element, identifier) {
-  return controller.application.getControllerForElementAndIdentifier(element, identifier);
-}
-function getControllerAndEnsureConnectedScope2(controller, element, outletName) {
-  let outletController = getOutletController2(controller, element, outletName);
-  if (outletController)
-    return outletController;
-  controller.application.router.proposeToConnectScopeForElementAndIdentifier(element, outletName);
-  outletController = getOutletController2(controller, element, outletName);
-  if (outletController)
-    return outletController;
-}
-function propertiesForOutletDefinition2(name) {
-  const camelizedName = namespaceCamelize2(name);
-  return {
-    [`${camelizedName}Outlet`]: {
-      get() {
-        const outletElement = this.outlets.find(name);
-        const selector = this.outlets.getSelectorForOutletName(name);
-        if (outletElement) {
-          const outletController = getControllerAndEnsureConnectedScope2(this, outletElement, name);
-          if (outletController)
-            return outletController;
-          throw new Error(`The provided outlet element is missing an outlet controller "${name}" instance for host controller "${this.identifier}"`);
-        }
-        throw new Error(`Missing outlet element "${name}" for host controller "${this.identifier}". Stimulus couldn't find a matching outlet element using selector "${selector}".`);
-      }
-    },
-    [`${camelizedName}Outlets`]: {
-      get() {
-        const outlets = this.outlets.findAll(name);
-        if (outlets.length > 0) {
-          return outlets.map((outletElement) => {
-            const outletController = getControllerAndEnsureConnectedScope2(this, outletElement, name);
-            if (outletController)
-              return outletController;
-            console.warn(`The provided outlet element is missing an outlet controller "${name}" instance for host controller "${this.identifier}"`, outletElement);
-          }).filter((controller) => controller);
-        }
-        return [];
-      }
-    },
-    [`${camelizedName}OutletElement`]: {
-      get() {
-        const outletElement = this.outlets.find(name);
-        const selector = this.outlets.getSelectorForOutletName(name);
-        if (outletElement) {
-          return outletElement;
-        } else {
-          throw new Error(`Missing outlet element "${name}" for host controller "${this.identifier}". Stimulus couldn't find a matching outlet element using selector "${selector}".`);
-        }
-      }
-    },
-    [`${camelizedName}OutletElements`]: {
-      get() {
-        return this.outlets.findAll(name);
-      }
-    },
-    [`has${capitalize2(camelizedName)}Outlet`]: {
-      get() {
-        return this.outlets.has(name);
-      }
-    }
-  };
-}
-function TargetPropertiesBlessing2(constructor) {
-  const targets = readInheritableStaticArrayValues2(constructor, "targets");
-  return targets.reduce((properties, targetDefinition) => {
-    return Object.assign(properties, propertiesForTargetDefinition2(targetDefinition));
-  }, {});
-}
-function propertiesForTargetDefinition2(name) {
-  return {
-    [`${name}Target`]: {
-      get() {
-        const target = this.targets.find(name);
-        if (target) {
-          return target;
-        } else {
-          throw new Error(`Missing target element "${name}" for "${this.identifier}" controller`);
-        }
-      }
-    },
-    [`${name}Targets`]: {
-      get() {
-        return this.targets.findAll(name);
-      }
-    },
-    [`has${capitalize2(name)}Target`]: {
-      get() {
-        return this.targets.has(name);
-      }
-    }
-  };
-}
-function ValuePropertiesBlessing2(constructor) {
-  const valueDefinitionPairs = readInheritableStaticObjectPairs2(constructor, "values");
-  const propertyDescriptorMap = {
-    valueDescriptorMap: {
-      get() {
-        return valueDefinitionPairs.reduce((result, valueDefinitionPair) => {
-          const valueDescriptor = parseValueDefinitionPair2(valueDefinitionPair, this.identifier);
-          const attributeName = this.data.getAttributeNameForKey(valueDescriptor.key);
-          return Object.assign(result, { [attributeName]: valueDescriptor });
-        }, {});
-      }
-    }
-  };
-  return valueDefinitionPairs.reduce((properties, valueDefinitionPair) => {
-    return Object.assign(properties, propertiesForValueDefinitionPair2(valueDefinitionPair));
-  }, propertyDescriptorMap);
-}
-function propertiesForValueDefinitionPair2(valueDefinitionPair, controller) {
-  const definition = parseValueDefinitionPair2(valueDefinitionPair, controller);
-  const { key, name, reader: read, writer: write } = definition;
-  return {
-    [name]: {
-      get() {
-        const value = this.data.get(key);
-        if (value !== null) {
-          return read(value);
-        } else {
-          return definition.defaultValue;
-        }
-      },
-      set(value) {
-        if (value === void 0) {
-          this.data.delete(key);
-        } else {
-          this.data.set(key, write(value));
-        }
-      }
-    },
-    [`has${capitalize2(name)}`]: {
-      get() {
-        return this.data.has(key) || definition.hasCustomDefaultValue;
-      }
-    }
-  };
-}
-function parseValueDefinitionPair2([token, typeDefinition], controller) {
-  return valueDescriptorForTokenAndTypeDefinition2({
-    controller,
-    token,
-    typeDefinition
-  });
-}
-function parseValueTypeConstant2(constant) {
-  switch (constant) {
-    case Array:
-      return "array";
-    case Boolean:
-      return "boolean";
-    case Number:
-      return "number";
-    case Object:
-      return "object";
-    case String:
-      return "string";
+function definitionForModuleWithContextAndKey(context2, key) {
+  const identifier = identifierForContextKey(key);
+  if (identifier) {
+    return definitionForModuleAndIdentifier(context2(key), identifier);
   }
 }
-function parseValueTypeDefault2(defaultValue) {
-  switch (typeof defaultValue) {
-    case "boolean":
-      return "boolean";
-    case "number":
-      return "number";
-    case "string":
-      return "string";
+function definitionForModuleAndIdentifier(module, identifier) {
+  const controllerConstructor = module.default;
+  if (typeof controllerConstructor == "function") {
+    return { identifier, controllerConstructor };
   }
-  if (Array.isArray(defaultValue))
-    return "array";
-  if (Object.prototype.toString.call(defaultValue) === "[object Object]")
-    return "object";
 }
-function parseValueTypeObject2(payload) {
-  const { controller, token, typeObject } = payload;
-  const hasType = isSomething2(typeObject.type);
-  const hasDefault = isSomething2(typeObject.default);
-  const fullObject = hasType && hasDefault;
-  const onlyType = hasType && !hasDefault;
-  const onlyDefault = !hasType && hasDefault;
-  const typeFromObject = parseValueTypeConstant2(typeObject.type);
-  const typeFromDefaultValue = parseValueTypeDefault2(payload.typeObject.default);
-  if (onlyType)
-    return typeFromObject;
-  if (onlyDefault)
-    return typeFromDefaultValue;
-  if (typeFromObject !== typeFromDefaultValue) {
-    const propertyPath = controller ? `${controller}.${token}` : token;
-    throw new Error(`The specified default value for the Stimulus Value "${propertyPath}" must match the defined type "${typeFromObject}". The provided default value of "${typeObject.default}" is of type "${typeFromDefaultValue}".`);
+function identifierForContextKey(key) {
+  const logicalName = (key.match(/^(?:\.\/)?(.+)(?:[_-]controller\..+?)$/) || [])[1];
+  if (logicalName) {
+    return logicalName.replace(/_/g, "-").replace(/\//g, "--");
   }
-  if (fullObject)
-    return typeFromObject;
 }
-function parseValueTypeDefinition2(payload) {
-  const { controller, token, typeDefinition } = payload;
-  const typeObject = { controller, token, typeObject: typeDefinition };
-  const typeFromObject = parseValueTypeObject2(typeObject);
-  const typeFromDefaultValue = parseValueTypeDefault2(typeDefinition);
-  const typeFromConstant = parseValueTypeConstant2(typeDefinition);
-  const type = typeFromObject || typeFromDefaultValue || typeFromConstant;
-  if (type)
-    return type;
-  const propertyPath = controller ? `${controller}.${typeDefinition}` : token;
-  throw new Error(`Unknown value type "${propertyPath}" for "${token}" value`);
-}
-function defaultValueForDefinition2(typeDefinition) {
-  const constant = parseValueTypeConstant2(typeDefinition);
-  if (constant)
-    return defaultValuesByType2[constant];
-  const hasDefault = hasProperty2(typeDefinition, "default");
-  const hasType = hasProperty2(typeDefinition, "type");
-  const typeObject = typeDefinition;
-  if (hasDefault)
-    return typeObject.default;
-  if (hasType) {
-    const { type } = typeObject;
-    const constantFromType = parseValueTypeConstant2(type);
-    if (constantFromType)
-      return defaultValuesByType2[constantFromType];
-  }
-  return typeDefinition;
-}
-function valueDescriptorForTokenAndTypeDefinition2(payload) {
-  const { token, typeDefinition } = payload;
-  const key = `${dasherize2(token)}-value`;
-  const type = parseValueTypeDefinition2(payload);
-  return {
-    type,
-    key,
-    name: camelize2(key),
-    get defaultValue() {
-      return defaultValueForDefinition2(typeDefinition);
-    },
-    get hasCustomDefaultValue() {
-      return parseValueTypeDefault2(typeDefinition) !== void 0;
-    },
-    reader: readers2[type],
-    writer: writers2[type] || writers2.default
-  };
-}
-var defaultValuesByType2 = {
-  get array() {
-    return [];
-  },
-  boolean: false,
-  number: 0,
-  get object() {
-    return {};
-  },
-  string: ""
-};
-var readers2 = {
-  array(value) {
-    const array = JSON.parse(value);
-    if (!Array.isArray(array)) {
-      throw new TypeError(`expected value of type "array" but instead got value "${value}" of type "${parseValueTypeDefault2(array)}"`);
-    }
-    return array;
-  },
-  boolean(value) {
-    return !(value == "0" || String(value).toLowerCase() == "false");
-  },
-  number(value) {
-    return Number(value.replace(/_/g, ""));
-  },
-  object(value) {
-    const object = JSON.parse(value);
-    if (object === null || typeof object != "object" || Array.isArray(object)) {
-      throw new TypeError(`expected value of type "object" but instead got value "${value}" of type "${parseValueTypeDefault2(object)}"`);
-    }
-    return object;
-  },
-  string(value) {
-    return value;
-  }
-};
-var writers2 = {
-  default: writeString2,
-  array: writeJSON2,
-  object: writeJSON2
-};
-function writeJSON2(value) {
-  return JSON.stringify(value);
-}
-function writeString2(value) {
-  return `${value}`;
-}
-var Controller2 = class {
-  constructor(context) {
-    this.context = context;
-  }
-  static get shouldLoad() {
-    return true;
-  }
-  static afterLoad(_identifier, _application) {
-    return;
-  }
-  get application() {
-    return this.context.application;
-  }
-  get scope() {
-    return this.context.scope;
-  }
-  get element() {
-    return this.scope.element;
-  }
-  get identifier() {
-    return this.scope.identifier;
-  }
-  get targets() {
-    return this.scope.targets;
-  }
-  get outlets() {
-    return this.scope.outlets;
-  }
-  get classes() {
-    return this.scope.classes;
-  }
-  get data() {
-    return this.scope.data;
-  }
-  initialize() {
-  }
-  connect() {
-  }
-  disconnect() {
-  }
-  dispatch(eventName, { target = this.element, detail = {}, prefix = this.identifier, bubbles = true, cancelable = true } = {}) {
-    const type = prefix ? `${prefix}:${eventName}` : eventName;
-    const event = new CustomEvent(type, { detail, bubbles, cancelable });
-    target.dispatchEvent(event);
-    return event;
-  }
-};
-Controller2.blessings = [
-  ClassPropertiesBlessing2,
-  TargetPropertiesBlessing2,
-  ValuePropertiesBlessing2,
-  OutletPropertiesBlessing2
-];
-Controller2.targets = [];
-Controller2.outlets = [];
-Controller2.values = {};
-
-// app/javascript/controllers/menu_controller.js
-var menu_controller_default = class extends Controller2 {
-  static targets = ["menu"];
-  toggle() {
-    this.menuTarget.classList.toggle("hidden");
-  }
-};
 
 // app/javascript/controllers/index.js
-application.register("hello", hello_controller_default);
-application.register("menu", menu_controller_default);
+var application = Application.start();
+var context = __require.context("controllers", true, /_controller\.js$/);
+application.load(definitionsFromContext(context));
 /*! Bundled license information:
 
 @hotwired/turbo/dist/turbo.es2017-esm.js:
