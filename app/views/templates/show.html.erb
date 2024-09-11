@@ -5,14 +5,17 @@
         <div class="card-body">
           <div class="flex">
             <div class="w-3/4">
-              <h3 style="display: inline;"><%= @template.title %></h3>
+              <h3 class="text-2xl font-bold" style="display: inline;"><%= @template.title %></h3>
               <ul class="list-inline">
                 <li class="list-inline-item"><%= "by #{@template.user.name}" %></li>
                 <li class="list-inline-item"><%= l @template.created_at, format: :long %></li>
               </ul>
+              <p class="mt-4 mb-4 text-gray-700"><%= @template.description %></p> <!-- テンプレート説明を追加し、マージンを設定 -->
             </div>
           </div>
-          <pre><%= @template.body %></pre>
+          <div class="flex justify-center mt-4">
+            <pre class="border border-black p-4 whitespace-pre-wrap w-full max-w-2xl"><%= @template.body %></pre>
+          </div>
         </div>
       </article>
     </div>
