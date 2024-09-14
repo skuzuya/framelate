@@ -1,6 +1,9 @@
 class TemplatesController < ApplicationController
-  skip_before_action :require_login, only: [ :index, :show ]
+  before_action :set_template, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
+
   def index
+    @templates = Template.all
   end
 
   def new
@@ -17,15 +20,12 @@ class TemplatesController < ApplicationController
   end
 
   def show
-    @template = Template.find(params[:id])
   end
 
   def edit
-    @template = Template.find(params[:id])
   end
 
   def update
-    @template = Template.find(params[:id])
     if @template.update(template_params)
       redirect_to template_path(@template)
     else
@@ -34,7 +34,6 @@ class TemplatesController < ApplicationController
   end
 
   def destroy
-    @template = Template.find(params[:id])
     @template.destroy
     redirect_to root_path, status: :see_other
   end
@@ -43,5 +42,20 @@ class TemplatesController < ApplicationController
 
   def template_params
     params.require(:template).permit(:title, :description, :body)
+  end
+
+  def set_template
+    @template = Template.find_by(id: params[:id])
+    unless @template
+      flash[:alert] = "Template not found."
+      redirect_to templates_path
+    end
+  end
+
+  def authorize_user
+    unless @template.user == current_user
+      flash[:alert] = "You are not authorized to edit this template."
+      redirect_to root_path
+    end
   end
 end
