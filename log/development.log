@@ -9483,6 +9483,7 @@ Processing by Rails::PwaController#manifest as JSON
 Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+<<<<<<< HEAD
   [1m[35m (121.3ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
   [1m[35mSQL (2.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
   [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "templates" CASCADE[0m
@@ -9899,10 +9900,44 @@ Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255
 ActionController::RoutingError (No route matches [GET] "/logout"):
   
 Started GET "/" for 192.168.65.1 at 2024-09-11 07:06:24 +0900
+=======
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.65.1 at 2024-09-14 14:03:47 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:14
+  [1m[36mTemplate Load (0.5ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/top/index.html.erb:19
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/top/index.html.erb:19
+  Rendered collection of top/_template.html.erb [2 times] (Duration: 1.1ms | GC: 0.0ms)
+  Rendered top/index.html.erb within layouts/application (Duration: 429.8ms | GC: 39.2ms)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 434.5ms | GC: 39.2ms)
+Completed 200 OK in 464ms (Views: 381.5ms | ActiveRecord: 60.2ms (3 queries, 0 cached) | GC: 41.2ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-14 14:03:47 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2024-09-14 14:05:27 +0900
+>>>>>>> 9b1ae71 (Save changes before pulling from template_details)
 Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
 Processing by TopController#index as HTML
   Rendering layout layouts/application.html.erb
   Rendering top/index.html.erb within layouts/application
+<<<<<<< HEAD
   [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/views/top/index.html.erb:14
   [1m[36mTemplate Load (0.8ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
@@ -9991,10 +10026,36 @@ Completed 200 OK in 294ms (Views: 229.5ms | ActiveRecord: 44.3ms (2 queries, 0 c
 
 
 Started GET "/" for 192.168.65.1 at 2024-09-11 07:07:26 +0900
+=======
+  [1m[36mUser Load (14.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:14
+  [1m[36mTemplate Load (0.8ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/top/index.html.erb:19
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/top/index.html.erb:19
+  Rendered collection of top/_template.html.erb [2 times] (Duration: 1.7ms | GC: 0.0ms)
+  Rendered top/index.html.erb within layouts/application (Duration: 58.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 61.4ms | GC: 0.0ms)
+Completed 200 OK in 65ms (Views: 47.5ms | ActiveRecord: 15.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-14 14:05:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.65.1 at 2024-09-14 15:43:28 +0900
+>>>>>>> 9b1ae71 (Save changes before pulling from template_details)
 Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
 Processing by TopController#index as HTML
   Rendering layout layouts/application.html.erb
   Rendering top/index.html.erb within layouts/application
+<<<<<<< HEAD
   [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   ↳ app/views/top/index.html.erb:14
   [1m[36mTemplate Load (0.7ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
@@ -10390,3 +10451,27 @@ FOREIGN KEY ("user_id")
   [1m[36mActiveRecord::InternalMetadata Update (1.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2024-09-11 06:37:15.950973' WHERE "ar_internal_metadata"."key" = 'environment'[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
   [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'a7992a90b1f23cfe43b576b842c9436f8b2d826b', '2024-09-11 06:37:15.953377', '2024-09-11 06:37:15.953378') RETURNING "key"[0m
+=======
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:14
+  [1m[36mTemplate Load (0.7ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/top/index.html.erb:19
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/top/index.html.erb:19
+  Rendered collection of top/_template.html.erb [2 times] (Duration: 4.6ms | GC: 0.0ms)
+  Rendered top/index.html.erb within layouts/application (Duration: 207.1ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 214.5ms | GC: 0.0ms)
+Completed 200 OK in 236ms (Views: 158.0ms | ActiveRecord: 62.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-09-14 15:43:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+>>>>>>> 9b1ae71 (Save changes before pulling from template_details)
