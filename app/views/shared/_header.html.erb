@@ -1,18 +1,41 @@
 <header>
   <nav class="w-full mx-auto flex justify-between items-center bg-gray-500 p-4" data-controller="menu">
-    <%= link_to root_path, class: "text-4xl font-semibold" do %>
+    <%= link_to root_path, class: "text-4xl font-semibold text-white" do %>
       Framelate
     <% end %>
     <div class="flex items-center">
       <% if current_user %>
-        <%= link_to 'Create', new_template_path, data: { turbo: false } %>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <%= button_to 'Logout', logout_path, method: :delete, data: { turbo: false } %>
+        <div class="relative">
+          <button id="hamburger-button" class="text-white focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+          <div id="hamburger-menu" class="hidden absolute right-0 mt-2 w-64 bg-white rounded-md shadow-lg z-50">
+            <%= link_to 'マイページ', mypage_path, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200" %>
+            <%= link_to 'いいね一覧（未実装）', root_path, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200" %>
+            <%= link_to '学習時間記録（未実装）', root_path, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200" %>
+            <%= link_to '新規作成', new_template_path, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200" %>
+            <%= link_to 'ランキング（未実装）', root_path, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200" %>
+            <%= button_to 'ログアウト', logout_path, method: :delete, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200", data: { turbo: false } %>
+          </div>
+        </div>
       <% else %>
-        <%= link_to 'Login', login_path, data: { turbo: false } %>
+        <%= link_to 'Login', login_path, class: "text-white", data: { turbo: false } %>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <%= link_to 'Signup', signup_path, data: { turbo: false } %>
+        <%= link_to 'Signup', signup_path, class: "text-white", data: { turbo: false } %>
       <% end %>
     </div>
   </nav>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('hamburger-button');
+    const menu = document.getElementById('hamburger-menu');
+
+    button.addEventListener('click', function() {
+      menu.classList.toggle('hidden');
+    });
+  });
+</script>
