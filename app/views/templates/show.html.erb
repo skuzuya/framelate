@@ -10,7 +10,7 @@
                 <li class="list-inline-item"><%= "by #{@template.user.name}" %></li>
                 <li class="list-inline-item"><%= l @template.created_at, format: :long %></li>
               </ul>
-              <p class="mt-4 mb-4 text-gray-700"><%= @template.description %></p>
+              <pre class="mt-4 mb-4 text-gray-700"><%= @template.description %></pre>
             </div>
             <% if current_user == @template.user %>
               <div class="flex space-x-2">

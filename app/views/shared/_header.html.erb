@@ -12,21 +12,11 @@
             </svg>
           </button>
           <div id="hamburger-menu" class="hidden absolute right-0 mt-2 w-64 bg-white rounded-md shadow-lg z-50">
-            <p>
-            <%= link_to 'マイページ', root_path, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200" %>
-            </p>
-            <p>
+            <%= link_to 'マイページ', mypage_path, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200" %>
             <%= link_to 'いいね一覧（未実装）', root_path, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200" %>
-            </p>
-            <p>
             <%= link_to '学習時間記録（未実装）', root_path, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200" %>
-            </p>
-            <p>
             <%= link_to '新規作成', new_template_path, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200" %>
-            </p>
-            <p>
             <%= link_to 'ランキング（未実装）', root_path, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200" %>
-            </p>
             <%= button_to 'ログアウト', logout_path, method: :delete, class: "block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200", data: { turbo: false } %>
           </div>
         </div>
