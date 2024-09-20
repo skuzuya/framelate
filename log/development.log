@@ -11726,3 +11726,123 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 13ms (Views: 8.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/mypage" for 192.168.65.1 at 2024-09-20 09:43:05 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | GC: 0.4ms)
+Completed 200 OK in 106ms (Views: 11.5ms | ActiveRecord: 45.3ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/" for 192.168.65.1 at 2024-09-20 09:43:06 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:14
+  [1m[36mTemplate Load (1.1ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/top/index.html.erb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/top/index.html.erb:19
+  Rendered collection of top/_template.html.erb [1 times] (Duration: 1.2ms | GC: 0.0ms)
+  Rendered top/index.html.erb within layouts/application (Duration: 13.7ms | GC: 0.7ms)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | GC: 0.8ms)
+Completed 200 OK in 34ms (Views: 15.4ms | ActiveRecord: 1.6ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/templates/2" for 192.168.65.1 at 2024-09-20 09:43:07 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTemplate Load (0.2ms)[0m  [1m[34mSELECT "templates".* FROM "templates" WHERE "templates"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/templates_controller.rb:48:in `set_template'
+  Rendering layout layouts/application.html.erb
+  Rendering templates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:10
+  Rendered templates/show.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | GC: 0.2ms)
+Completed 200 OK in 23ms (Views: 12.9ms | ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/templates/2" for 192.168.65.1 at 2024-09-20 09:43:08 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTemplate Load (0.4ms)[0m  [1m[34mSELECT "templates".* FROM "templates" WHERE "templates"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/templates_controller.rb:48:in `set_template'
+  Rendering layout layouts/application.html.erb
+  Rendering templates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:10
+  Rendered templates/show.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | GC: 0.6ms)
+Completed 200 OK in 19ms (Views: 10.6ms | ActiveRecord: 1.8ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for 192.168.65.1 at 2024-09-20 09:44:23 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:14
+  [1m[36mTemplate Load (0.4ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/top/index.html.erb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/top/index.html.erb:19
+  Rendered collection of top/_template.html.erb [1 times] (Duration: 5.5ms | GC: 0.0ms)
+  Rendered top/index.html.erb within layouts/application (Duration: 139.7ms | GC: 3.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 141.9ms | GC: 3.2ms)
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 82.5ms (3 queries, 0 cached) | GC: 3.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<ActionView::Base:0x00000000035048>):
+
+Causes:
+NameError (undefined local variable or method `post' for #<ActionView::Base:0x00000000035048>)
+     9:       <ul class="text-gray-600 mb-4">
+    10:         <% if template.user %>
+    11:           <li class="flex items-center"><i class="bi bi-person mr-2"></i><%= template.user.name %></li>
+    12:           <% if post.user.avatar.present? %>
+    13:             <%= image_tag post.user.avatar.url, class: "w-8 h-8 rounded-full mr-2" %>
+    14:           <% else %>
+    15:             <%= image_tag 'default_avatar.png', class: "w-8 h-8 rounded-full mr-2" %>
+  
+app/views/top/_template.html.erb:12
+app/views/top/_template.html.erb:2
+app/views/top/index.html.erb:21
+Started GET "/" for 192.168.65.1 at 2024-09-20 09:44:46 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:14
+  [1m[36mTemplate Load (0.6ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/top/index.html.erb:19
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/top/index.html.erb:19
+  Rendered collection of top/_template.html.erb [1 times] (Duration: 3.7ms | GC: 0.0ms)
+  Rendered top/index.html.erb within layouts/application (Duration: 87.8ms | GC: 4.6ms)
+  Rendered shared/_header.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 99.1ms | GC: 6.5ms)
+Completed 200 OK in 127ms (Views: 63.8ms | ActiveRecord: 39.9ms (3 queries, 0 cached) | GC: 7.5ms)
+
+
