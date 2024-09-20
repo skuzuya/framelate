@@ -1,6 +1,7 @@
 class TemplatesController < ApplicationController
   before_action :set_template, only: [ :show, :edit, :update, :destroy ]
   before_action :authorize_user, only: [ :edit, :update, :destroy ]
+  skip_before_action :require_login, only: [ :index, :show ]
 
   def index
     @templates = Template.all
