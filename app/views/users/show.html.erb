@@ -6,10 +6,18 @@
           <div class="flex justify-between items-center">
             <div class="w-3/4">
               <h1 class="text-2xl font-bold" style="display: inline;">マイページ</h1>
+              <% if @user.avatar.present? %>
+                <%= image_tag @user.avatar.url, class: "w-32 h-32 rounded-full mb-4" %>
+              <% else %>
+                <p>アイコンが設定されていません。</p>
+              <% end %>
               <ul class="list-inline mt-4">
                 <li class="list-inline-item"><strong>ユーザー名:</strong> <%= @user.name %></li>
                 <li class="list-inline-item"><strong>メールアドレス:</strong> <%= @user.email %></li>
               </ul>
+            </div>
+            <div class="w-1/4 text-right">
+              <%= link_to '編集', edit_user_path(@user), class: "border border-black bg-white text-black rounded px-4 py-2 hover:bg-gray-100 hover:cursor-pointer" %>
             </div>
           </div>
         </div>
