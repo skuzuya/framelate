@@ -2,7 +2,7 @@ class TopController < ApplicationController
   skip_before_action :require_login
 
   def index
-    @templates = Template.includes(:user)
+    @templates = Template.includes(:user).all
   end
 
   # private

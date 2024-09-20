@@ -9,6 +9,11 @@
       <ul class="text-gray-600 mb-4">
         <% if template.user %>
           <li class="flex items-center"><i class="bi bi-person mr-2"></i><%= template.user.name %></li>
+          <% if template.user.avatar.present? %>
+            <%= image_tag template.user.avatar.url, class: "w-8 h-8 rounded-full mr-2" %>
+          <% else %>
+            <%= image_tag 'default_avatar.png', class: "w-8 h-8 rounded-full mr-2" %>
+          <% end %>
         <% end %>
         <li class="flex items-center"><i class="bi bi-calendar mr-2"></i><%= l template.created_at, format: :short %></li>
       </ul>

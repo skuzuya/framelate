@@ -38,6 +38,7 @@ gem "bootsnap", require: false
 
 gem "sorcery"
 gem "importmap-rails"
+gem "carrierwave"
 # トランスパイルやバンドルを行わずにJavaScriptを直接ブラウザに配信する
 
 group :development, :test do
