@@ -9,4 +9,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :templates, dependent: :destroy
+
+  has_many :bookmarks
+  has_many :bookmarked_templates, through: :bookmarks, source: :template
 end

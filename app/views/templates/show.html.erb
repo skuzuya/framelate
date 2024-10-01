@@ -17,6 +17,14 @@
                 <%= link_to '編集', edit_template_path(@template), class: "border border-black bg-white text-black rounded px-4 py-2 hover:bg-gray-100 hover:cursor-pointer" %>
                 <%= button_to '削除', template_path(@template), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "border border-red-500 bg-white text-red-500 rounded px-4 py-2 hover:bg-red-100 hover:cursor-pointer" %></pre>
               </div>
+            <% else %>
+              <div class="flex space-x-2">
+                <% if current_user.bookmarked_templates.include?(@template) %>
+                  <%= button_to 'ブックマーク解除', template_bookmark_path(@template, current_user.bookmarks.find_by(template: @template)), method: :delete, class: "btn btn-danger" %>
+                <% else %>
+                  <%= button_to 'ブックマーク', template_bookmarks_path(@template), method: :post, class: "btn btn-primary" %>
+                <% end %>
+              </div>
             <% end %>
           </div>
           <div class="flex justify-center mt-4">
