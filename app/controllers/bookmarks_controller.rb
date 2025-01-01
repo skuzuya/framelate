@@ -4,12 +4,12 @@ class BookmarksController < ApplicationController
   def create
     @template = Template.find(params[:template_id])
     current_user.bookmarked_templates << @template
-    redirect_to @template, notice: 'テンプレートをブックマークしました。'
+    redirect_to @template
   end
 
   def destroy
     @template = Template.find(params[:template_id])
     current_user.bookmarked_templates.delete(@template)
-    redirect_to @template, notice: 'テンプレートのブックマークを解除しました。'
+    redirect_to @template
   end
 end

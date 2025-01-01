@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get "bookmarks/create"
-  get "bookmarks/destroy"
   root "top#index"
   get "top/index"
 
@@ -13,12 +11,13 @@ Rails.application.routes.draw do
   resources :templates, only: %i[index new create show edit update destroy]
 
   resources :templates do
-    resources :bookmarks, only: [:create, :destroy]
+    resources :bookmarks, only: [ :create, :destroy ]
   end
 
-  get 'templates/ranking', to: 'templates#ranking', as: 'template_ranking'
-
+  get "bookmarked_templates", to: "templates#bookmarked"
+  get "templates/ranking", to: "templates#ranking", as: "template_ranking"
   get "mypage", to: "users#show"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

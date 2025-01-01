@@ -39,6 +39,10 @@ class TemplatesController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  def bookmarked
+    @bookmarked_templates = current_user.bookmarked_templates
+  end
+
   private
 
   def template_params

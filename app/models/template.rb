@@ -7,5 +7,5 @@ class Template < ApplicationRecord
   has_many :bookmarks
   has_many :bookmarking_users, through: :bookmarks, source: :user
 
-  scope :ranked_by_bookmarks, -> { left_joins(:bookmarks).group(:id).order('COUNT(bookmarks.id) DESC') }
+  scope :ranked_by_bookmarks, -> { left_joins(:bookmarks).group(:id).order("COUNT(bookmarks.id) DESC") }
 end
