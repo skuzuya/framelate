@@ -18154,3 +18154,204 @@ Processing by TemplatesController#show as TURBO_STREAM
 Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 1.7ms (4 queries, 0 cached) | GC: 1.4ms)
 
 
+Started GET "/templates/3" for 192.168.160.1 at 2025-01-01 18:34:43 +0900
+Cannot render console from 192.168.160.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTemplate Load (1.9ms)[0m  [1m[34mSELECT "templates".* FROM "templates" WHERE "templates"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/templates_controller.rb:53:in `set_template'
+  Rendering layout layouts/application.html.erb
+  Rendering templates/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:15
+  [1m[36mTemplate Exists? (12.3ms)[0m  [1m[34mSELECT 1 AS one FROM "templates" INNER JOIN "bookmarks" ON "templates"."id" = "bookmarks"."template_id" WHERE "bookmarks"."user_id" = $1 AND "templates"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:30
+  Rendered templates/show.html.erb within layouts/application (Duration: 49.2ms | GC: 0.1ms)
+  Rendered shared/_header.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 61.7ms | GC: 0.1ms)
+Completed 200 OK in 145ms (Views: 49.0ms | ActiveRecord: 51.4ms (4 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for 192.168.160.1 at 2025-01-01 18:34:45 +0900
+Cannot render console from 192.168.160.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:14
+  [1m[36mTemplate Load (0.7ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/top/index.html.erb:19
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/top/index.html.erb:19
+  Rendered collection of top/_template.html.erb [2 times] (Duration: 13.6ms | GC: 0.0ms)
+  Rendered top/index.html.erb within layouts/application (Duration: 29.0ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 31.3ms | ActiveRecord: 2.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/templates/2" for 192.168.160.1 at 2025-01-01 18:38:32 +0900
+Cannot render console from 192.168.160.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTemplate Load (6.9ms)[0m  [1m[34mSELECT "templates".* FROM "templates" WHERE "templates"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/templates_controller.rb:53:in `set_template'
+  Rendering layout layouts/application.html.erb
+  Rendering templates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:15
+  [1m[36mTemplate Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "templates" INNER JOIN "bookmarks" ON "templates"."id" = "bookmarks"."template_id" WHERE "bookmarks"."user_id" = $1 AND "templates"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:22
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."user_id" = $1 AND "bookmarks"."template_id" = $2 LIMIT $3[0m  [["user_id", 1], ["template_id", 2], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:23
+  Rendered templates/show.html.erb within layouts/application (Duration: 36.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | GC: 0.0ms)
+Completed 200 OK in 75ms (Views: 46.4ms | ActiveRecord: 10.1ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 192.168.160.1 at 2025-01-01 18:38:35 +0900
+Cannot render console from 192.168.160.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:14
+  [1m[36mTemplate Load (0.5ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/top/index.html.erb:19
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/top/index.html.erb:19
+  Rendered collection of top/_template.html.erb [2 times] (Duration: 6.9ms | GC: 0.0ms)
+  Rendered top/index.html.erb within layouts/application (Duration: 24.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 25.3ms | ActiveRecord: 3.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/mypage" for 192.168.160.1 at 2025-01-01 18:38:39 +0900
+Cannot render console from 192.168.160.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/1/edit" for 192.168.160.1 at 2025-01-01 18:38:40 +0900
+Cannot render console from 192.168.160.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.2ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 11.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/users/1" for 192.168.160.1 at 2025-01-01 18:38:49 +0900
+Cannot render console from 192.168.160.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"sk", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x0000ffff78ecede8 @tempfile=#<Tempfile:/tmp/RackMultipart20250101-12-hb1nnh.jpeg>, @content_type="image/jpeg", @original_filename="すみさんチック.jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"すみさんチック.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[36mUser Update (8.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "avatar" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2025-01-01 09:38:49.318730"], ["avatar", "すみさんチック.jpeg"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:29:in `update'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 90ms (ActiveRecord: 48.6ms (2 queries, 0 cached) | GC: 23.6ms)
+
+
+Started GET "/users/1" for 192.168.160.1 at 2025-01-01 18:38:49 +0900
+Cannot render console from 192.168.160.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.4ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 192.168.160.1 at 2025-01-01 18:38:54 +0900
+Cannot render console from 192.168.160.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TopController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering top/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/top/index.html.erb:14
+  [1m[36mTemplate Load (0.6ms)[0m  [1m[34mSELECT "templates".* FROM "templates"[0m
+  ↳ app/views/top/index.html.erb:19
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/top/index.html.erb:19
+  Rendered collection of top/_template.html.erb [2 times] (Duration: 3.8ms | GC: 0.0ms)
+  Rendered top/index.html.erb within layouts/application (Duration: 17.4ms | GC: 0.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | GC: 0.6ms)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 1.7ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/templates/2" for 192.168.160.1 at 2025-01-01 18:38:55 +0900
+Cannot render console from 192.168.160.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTemplate Load (0.7ms)[0m  [1m[34mSELECT "templates".* FROM "templates" WHERE "templates"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/templates_controller.rb:53:in `set_template'
+  Rendering layout layouts/application.html.erb
+  Rendering templates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:15
+  [1m[36mTemplate Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "templates" INNER JOIN "bookmarks" ON "templates"."id" = "bookmarks"."template_id" WHERE "bookmarks"."user_id" = $1 AND "templates"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:22
+  [1m[36mBookmark Load (1.0ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."user_id" = $1 AND "bookmarks"."template_id" = $2 LIMIT $3[0m  [["user_id", 1], ["template_id", 2], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:23
+  Rendered templates/show.html.erb within layouts/application (Duration: 15.5ms | GC: 0.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | GC: 0.5ms)
+Completed 200 OK in 28ms (Views: 20.6ms | ActiveRecord: 3.0ms (5 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/templates/3" for 192.168.160.1 at 2025-01-01 18:38:55 +0900
+Cannot render console from 192.168.160.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTemplate Load (0.4ms)[0m  [1m[34mSELECT "templates".* FROM "templates" WHERE "templates"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/templates_controller.rb:53:in `set_template'
+  Rendering layout layouts/application.html.erb
+  Rendering templates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:15
+  [1m[36mTemplate Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "templates" INNER JOIN "bookmarks" ON "templates"."id" = "bookmarks"."template_id" WHERE "bookmarks"."user_id" = $1 AND "templates"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/views/templates/show.html.erb:30
+  Rendered templates/show.html.erb within layouts/application (Duration: 6.1ms | GC: 0.2ms)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.3ms)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 1.2ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
