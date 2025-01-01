@@ -1,0 +1,14 @@
+<h1>ブックマークしたテンプレート</h1>
+
+<% if @bookmarked_templates.any? %>
+  <ul>
+    <% @bookmarked_templates.each do |template| %>
+      <li>
+        <%= link_to template.title, template_path(template) %>
+        <p><%= template.description %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>ブックマークしたテンプレートはありません。</p>
+<% end %>

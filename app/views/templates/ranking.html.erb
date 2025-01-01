@@ -1,0 +1,9 @@
+<h1>テンプレートランキング</h1>
+<% @templates = Template.ranked_by_bookmarks.limit(10) %>
+<ol>
+  <% @templates.each do |template| %>
+    <li>
+      <%= link_to template.title, template_path(template) %> - <%= template.bookmarks.count %> ブックマーク
+    </li>
+  <% end %>
+</ol>
